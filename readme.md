@@ -13,3 +13,6 @@ $ nasm -f bin -o disk.bin disk.asm
 ``` bash
 $ qemu-system-i386 -fda disk.bin
 ```
+
+## Doc reference
+https://www.cs.bham.ac.uk//~exr/lectures/opsys/10_11/lectures/os-dev.pdf
