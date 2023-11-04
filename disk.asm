@@ -38,7 +38,7 @@ BEGIN_PM:
 
 ; Strings with \r\n\0 at the end
 boot_msg: db 'System booted in real mode.', CR, LF, 0
-pm_mdoe_msg: db 'Entered 32 bit protected mode.', CR, LF, 0
+pm_mdoe_msg: db 'Entered 32 bit protected mode.', 0
 
 ; Padding and magic BIOS number.
 times 510 - ($-$$) db 0
