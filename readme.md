@@ -2,16 +2,16 @@
 
 This is an assembly code to build a disk image that contains a program in the boot segment for BIOS to execute
 
-## Build Binary
+## Build the boot loader
 
 ``` bash
-$ nasm -f bin -o disk.bin disk.asm
+$ nasm -f bin -o boot.bin boot.asm
 ```
 
-## Run Disk
+## Run the boot loader as the disk
 
 ``` bash
-$ qemu-system-i386 -fda disk.bin
+$ qemu-system-i386 -fda boot.bin
 ```
 
 ## Doc reference
