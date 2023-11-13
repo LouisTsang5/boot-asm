@@ -8,10 +8,23 @@ This is an assembly code to build a disk image that contains a program in the bo
 $ nasm -f bin -o boot.bin boot.asm
 ```
 
+## Build the kernel
+
+``` bash
+$ gcc -ffreestanding -m32 -c kernel.c -o kernel.o -fno-pie # compile kernel
+$ ld -o kernel.bin -Ttext 0x1000 kernel.o --oformat binary -m elf_i386 # link kernel
+```
+
+## Put images together
+
+```bash
+$ cat boot.bin kernel.bin > image.bin
+```
+
 ## Run the boot loader as the disk
 
 ``` bash
-$ qemu-system-i386 -fda boot.bin
+$ qemu-system-i386 -fda image.bin
 ```
 
 ## Doc reference
