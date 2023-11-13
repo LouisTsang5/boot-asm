@@ -24,3 +24,4 @@ load_disk_err:
     mov ax, disk_err_msg
     call print_str
     jmp $
+disk_err_msg: db 'Failed to load disk', 0
